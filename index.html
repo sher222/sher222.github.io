@@ -3,6 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sheryl Hsu's personal website: research, writing, and what comes next.">
+    <meta property="og:title" content="Sheryl Hsu">
+    <meta property="og:description" content="Research, writing, and what comes next.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sherylhsu.com/">
+    <meta property="og:image" content="https://sherylhsu.com/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:image:alt" content="Sheryl Hsu — Research, writing, and what comes next.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sheryl Hsu">
+    <meta name="twitter:description" content="Research, writing, and what comes next.">
+    <meta name="twitter:image" content="https://sherylhsu.com/og.jpg">
+    <link rel="canonical" href="https://sherylhsu.com/">
     <title>Sheryl Hsu</title>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -16,6 +30,10 @@
             padding-left: 10%;
             padding-right: 10%;
             font-family: 'Work Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 16px);
+            box-sizing: border-box;
 
         }
         h1 {
@@ -23,48 +41,87 @@
             margin-bottom: 40px;
         }
         h2 {
-            font-size: 1.5em;
-            margin-top: 40px;
-            margin-bottom: 10px;
+            font-size: 1.35em;
+            margin-top: 44px;
+            margin-bottom: 16px;
         }
         p {
             font-size: 1.1em;
             margin-bottom: 20px;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        .news-item {
-            display: flex;
-            margin-bottom: 10px;
-        }
-        .date {
-            width: 100px;
-            font-weight: bold;
-        }
-        .description {
-            flex: 1;
         }
         a {
         color: inherit; /* Removes the default hyperlink color */
         /* text-decoration: inherit; Inherits text decoration from the parent, removing underline */
         }
         .icons {
-            margin-top: 40px;
+            margin-top: auto;
+            padding-top: 60px;
+            text-align: center;
+        }
+        .post-link {
+            display: flex;
+            gap: 24px;
+            align-items: baseline;
+            font-size: 1.1em;
+        }
+        .post-link time {
+            color: #6b625c;
+            flex: 0 0 auto;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 28px 7%;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            .post-link {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 6px;
+            }
         }
         .icons a {
             margin-right: 15px;
             text-decoration: none;
             color: #333;
         }
+        .email-tooltip {
+            color: #333;
+            cursor: help;
+            display: inline-block;
+            margin-right: 15px;
+            position: relative;
+        }
+        .email-tooltip::after {
+            background: #333;
+            border-radius: 6px;
+            bottom: calc(100% + 12px);
+            color: #FFF5EC;
+            content: attr(data-email);
+            font-size: 14px;
+            left: 50%;
+            opacity: 0;
+            padding: 8px 10px;
+            pointer-events: none;
+            position: absolute;
+            transform: translateX(-50%) translateY(4px);
+            transition: opacity 150ms ease, transform 150ms ease;
+            visibility: hidden;
+            white-space: nowrap;
+            z-index: 1;
+        }
+        .email-tooltip:hover::after,
+        .email-tooltip:focus-visible::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            visibility: visible;
+        }
         .fab {
             font-size: 24px; /* Adjust the size as needed */
         }
-        .fas{
+        .fas {
             font-size: 24px;
         }
 
@@ -72,68 +129,24 @@
 </head>
 <body>
     <h1>Sheryl Hsu</h1>
-    <p>I’m currently an undergrad at Stanford University. I have a strong engineering background and am currently passionate about ML research and startups. I'm broadly interested in generative models, reinforcement learning, and robotics. Currently, I’m working on reinforcement learning and LLMs at <a href="https://irislab.stanford.edu">IRIS lab</a>.</p>
-    <h2>Some things I’ve worked on:</h2>
-    <ul>
-        <li>Better aligning LLMs with humans using different forms of preference data as part of <a href="https://irislab.stanford.edu">IRIS lab</a></li>
-        <li>Building out and optimizing fine-tuning as a service at <a href="https://www.mlfoundry.com">Foundry</a></li>
-        <li>Identifying malicious and vulnerable extensions at <a href="https://esrg.stanford.edu">Stanford’s Emperical Security Research Group</a></li>
-        <li>Data visualization tools at <a href="https://www.twosigma.com">Two Sigma</a></li>
-        <li>iOS app for jazz musicians (7k downloads) called <a href="https://elicksapp.com">elicks</a></li>
-    </ul>
+    <p>I am currently working on something new!</p>
+    <p>I previously was a researcher at OpenAI, where I worked on reasoning, RL, scaling test-time compute, and online learning. Some highlights from my time at OpenAI were working on the <a href="https://x.com/SherylHsu02/status/1946478334013321231">IMO</a>/<a href="https://x.com/SherylHsu02/status/1954966109851119921">IOI gold medal projects</a> and training the model that solved the <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/">unit distance Erdős problem</a>.</p>
+    <p>I received my bachelor’s and master’s degrees in computer science from Stanford University. At Stanford, I published <a href="https://arxiv.org/abs/2410.23214">multiple</a> <a href="https://arxiv.org/abs/2502.19312">papers</a> in Chelsea Finn’s lab and interned at Mithril and HRT.</p>
 
-    <h2 style="margin-bottom: 20px;">News:</h2>
-    <div class="news-item">
-        <div class="date">10/30/24</div>
-        <div class="description">We officially released <a href="http://sherylhsu.com/LeReT">"Grounding by Trying: LLMs with Reinforcement Learning-Enhanced Retrieval"</a> describing a reinforcement-learning based method to improve LLMs ability to use retrieval search tools.</div>
-    </div>
-    <div class="news-item">
-        <div class="date">06/24/24</div>
-        <div class="description">Our paper "What is in the Chrome Web Store" was covered by many news outlets, notably by <a href="https://www.forbes.com/sites/daveywinder/2024/06/24/280-million-google-chrome-users-installed-dangerous-extensions-study-says/">Forbes</a> and <a href="https://www.theregister.com/2024/06/23/google_chrome_web_store_vetting/">The Register.</a></div>
-    </div>
-    <div class="news-item">
-        <div class="date">06/17/24</div>
-        <div class="description">It’s my first day at <a href="https://www.mlfoundry.com">Foundry</a></div>
-    </div>
-    <div class="news-item">
-        <div class="date">05/01/24</div>
-        <div class="description">Our paper <a href="https://austrian-code-wizard.github.io/c3po-website/">“RLVF: Learning from Verbal Feedback without Overgeneralization”</a> was accepted to ICML</div>
-    </div>
-    <div class="news-item">
-        <div class="date">04/08/24</div>
-        <div class="description"><a href="https://www.stanfordaiclub.org">Stanford AI Club</a>, which I co-founded, officially launches</div>
-    </div>
-    <div class="news-item">
-        <div class="date">01/02/24</div>
-        <div class="description">First day of my internship at <a href="https://www.hudsonrivertrading.com">Hudson River Trading</a></div>
-    </div>
-    <div class="news-item">
-        <div class="date">11/15/23</div>
-        <div class="description">Our paper <a href="https://cispa.de/en/research/publications/4057-what-is-in-the-chrome-web-store-">“What is in the Chrome Web Store”</a> has been accepted to AsiaCCS</div>
-    </div>
-    <div class="news-item">
-        <div class="date">06/19/23</div>
-        <div class="description">First day of my internship at <a href="https://www.twosigma.com">Two Sigma</a></div>
-    </div>
-    <div class="news-item">
-        <div class="date">09/26/22</div>
-        <div class="description">My app <a href="https://elicksapp.com">elicks</a> is officially available in the Apple App Store</div>
-    </div>
-    <h2>Two truths and a lie:</h2>
-    <ul>
-        <li>I’ve gone stand up paddle boarding inside a drain pipe off a river</li>
-        <li>I fell off the risers (and into the trumpet section) at a band performance in Carnegie hall</li>
-        <li>I once made the entire school evacuate by improperly using a laser cutter</li>
-    </ul>
+    <section aria-labelledby="writing-heading">
+        <h2 id="writing-heading">Writing</h2>
+        <div class="post-link">
+            <time datetime="2026-09">September 2026</time>
+            <a href="blog/reflections-on-openai.html">Reflections on my time at OpenAI</a>
+        </div>
+    </section>
 
-    <div class="icons" style="text-align: center; margin-top: 60px;">
+    <div class="icons">
         <p>Contact me:</p>
-        <a href="mailto:sherylh@stanford.edu"><i class="fas fa-envelope"></i></a>
-        <a href="https://twitter.com/SherylHsu02" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/sheryl-hsu-83b84a183/" target="_blank"><i class="fab fa-linkedin"></i></a>
-
-        <a href="https://github.com/sher222" target="_blank"><i class="fab fa-github"></i></a>
-
+        <span class="email-tooltip" tabindex="0" aria-label="Email: sheryl hsu zero two at gmail dot com" data-email="sheryl hsu 02 [at] gmail [dot] com"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+        <a href="https://twitter.com/SherylHsu02" target="_blank" aria-label="X / Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/sheryl-hsu-83b84a183/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/sher222" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
     </div>
 
 </body>
